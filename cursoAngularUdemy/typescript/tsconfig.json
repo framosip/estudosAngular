@@ -1,0 +1,7 @@
+{
+    /*Opções de compilação*/
+    "compilerOptions": {
+        "outDir": "dist", //Define uma pasta onde os arquivos compilados serão salvos (.js)
+        "noEmitOnError": false //Define que o TS não deve ou deve criar o arquivo JS em caso de erro
+    }
+}
