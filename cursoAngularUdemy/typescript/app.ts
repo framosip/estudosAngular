@@ -1,3 +1,5 @@
+import * as _ from 'lodash' //importando todas as classes da biblioteca do lodash
+
 //Variáveis
 
 let message: string = "Help me, Obi-Wan Kenobi. You're my only hope"
@@ -47,3 +49,5 @@ console.log(`inc (5,1) = ${inc(5,1)}`)
 //Segundo passando apenas o primeiro parâmetro ja que o segundo tem um valor padrão
 console.log(`inc (5) = ${inc(5)}`)
 
+//Exemplo de uso de uma biblioteca importada, no caso o lodash
+console.log(_.pad("Typescript Examples", 40, "="))

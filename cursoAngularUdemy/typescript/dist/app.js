@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+var _ = require("lodash"); //importando todas as classes da biblioteca do lodash
 //Variáveis
 var message = "Help me, Obi-Wan Kenobi. You're my only hope";
 console.log(message);
@@ -34,3 +37,5 @@ function inc(speed, inc) {
 console.log("inc (5,1) = " + inc(5, 1));
 //Segundo passando apenas o primeiro parâmetro ja que o segundo tem um valor padrão
 console.log("inc (5) = " + inc(5));
+//Exemplo de uso de uma biblioteca importada, no caso o lodash
+console.log(_.pad("Typescript Examples", 40, "="));
