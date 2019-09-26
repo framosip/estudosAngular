@@ -1,6 +1,17 @@
-<div>
-  Student: {{student.name}}
+<!--
+  Checar (ngIf) student é como checar se não é nulo ou indefinido.
+  Então, se student não é nulo ou indefinido, exibe a div
+-->
+<div *ngIf="student">
+  <!-- 
+    O operador '?' indica que, no exemplo abaixo, caso student seja nulo, não precisa avaliar o que tem depois, no exemplo, name
+  -->
+  Student: {{student?.name}} 
   <div *ngIf="student.isJedi">
     Jedi Temple: Coruscante
   </div>
 </div>
+
+<p *ngIf="!student" >
+  Sem dados para exibir
+</p>
