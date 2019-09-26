@@ -40,4 +40,52 @@
 
   </article>
 
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+        Selecione uma classe
+        <!--
+          #classe é uma variável local para acessar o select depois 
+          em outros lugares
+        -->
+        <select #classe (change)="0">
+          <option value="alert-success">Sucesso</option>
+          <option value="alert-info">Info</option>
+          <option value="alert-warning">Warning</option>
+          <option value="alert-danger">Danger</option>
+        </select>
+
+        <br><br>
+
+        <!-- 
+          Property binding de classe
+          Com estilo de classe. Aplicará um estilo a propriedade depois do "." dependendo do
+          valor do select (marcado com #classe).
+          Se igual alert-danger coloca 'block' se diferente coloca 'none'
+        -->
+        <div class="alert alert-danger" role="alert"
+          [style.display]=" classe.value == 'alert-danger' ? 'block' : 'none' ">
+          Esse texto somente aparece em caso de erro.
+        </div>
+
+        <!-- 
+          Mudando a classe por interpolação. 
+          Colocará a classe informada após com o valor do select (marcado com #classe)
+        -->
+        <div class="alert {{ classe.value }}" role="alert">
+          Texto colorido conforme valor do combobox.
+        </div>
+
+        <!-- 
+          Property binding de classe
+          Colocará a classe informada após o "." com o valor do select (marcado com #classe)
+        -->
+        <div class="alert" [class.alert-success]="classe.value == 'alert-success'" role="alert">Sucesso</div>
+        <div class="alert" [class.alert-info]="classe.value == 'alert-info'" role="alert">Info</div>
+        <div class="alert" [class.alert-warning]="classe.value == 'alert-warning'" role="alert">Alerta</div>
+        <div class="alert" [class.alert-danger]="classe.value == 'alert-danger'" role="alert">Erro</div>
+
+    </div>
+  </article>
+
 </section>
