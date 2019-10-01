@@ -6,9 +6,13 @@
   <!-- 
     O operador '?' indica que, no exemplo abaixo, caso student seja nulo, não precisa avaliar o que tem depois, no exemplo, name
   -->
-  Student: {{student?.name}} 
+  Student: <a href="#" (click)="clicked()">{{student?.name}}</a>
   <div *ngIf="student.isJedi">
-    Jedi Temple: Coruscante
+    Jedi Temple: Coruscante <button (click)="description.focus()">Focus!</button> <br>
+    <!-- 
+      Variável de template #description. Pode ser utilizada no template ou até mesmo em métodos
+    -->
+    <textarea #description></textarea>
   </div>
 </div>
 
