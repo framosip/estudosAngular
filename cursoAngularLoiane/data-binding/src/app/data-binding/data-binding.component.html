@@ -115,3 +115,44 @@
   </article>
 
 </section>
+
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+      <input type="text" [value]="nome"
+      (input)="nome = $event.target.value" />
+
+      <!-- 
+        NgModel é a representação de uma entidade.
+        Quando utulizado o evento ngModelChange não é necessário incluir
+        $event.target.value, bastando apenas $event
+      -->
+      <input type="text" [ngModel]="nome"
+      (ngModelChange)="nome = $event" />
+
+      <!-- 
+        Forma reduziada com o two-way databinding (Binding de propriedade e binding de evento)
+      -->      
+      <input type="text" [(ngModel)]="nome" />      
+
+      <!-- 
+        Forma como o angular faz por tras dos panos
+        o binding de propriedade (bind) e o binding de evento (on)
+      -->      
+      <input type="text" bindon-ngModel="nome" />       
+
+      <p>Você digitou o nome: {{nome}}</p>
+
+      <!-- 
+        Two-way Data Binding com um objeto
+      -->
+      <div>    
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+      </div>
+
+      <p>Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}}</p>
+    </div>
+  </article>
+</section>
